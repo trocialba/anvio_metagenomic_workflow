@@ -92,4 +92,19 @@ do
 done
 ```
 
+## Anvi'o metagenomic workflow
+
+### 1. Create an anvio contigs database
+An anvi’o contigs database will keep all the information related to your contigs: positions of open reading frames, k-mer frequencies for each contigs, where splits start and end, functional and taxonomic annotation of genes, etc.
+
+```
+anvi-gen-contigs-database -f contigs.fa -o contigs.db -n 'An example contigs database'
+```
+this command will automatically: compute k-mer frequencies for each contig (the default is 4), soft-split contigs longer than 20,000 bp into smaller ones, identify open reading frames using Prodigal.
+
+1.1. Display contigs database:
+
+```
+anvi-display-contigs-stats 05_CONTIG_DATABASE/contigs.db
+```
 
