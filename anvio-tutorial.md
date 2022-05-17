@@ -7,6 +7,7 @@ In this tutorial we will use 8 test samples, located in 00_RAW folder
 The following softwares need to be installed: anvi'o, bowtie2, iu-filter-quality-minoche, samtools, megahit, anvi-init-bam, see here: https://anvio.org/install/
 
 ## Preparation
+Assembly and mapping are key steps for most assembly-based, genome-resolved metagenomic studies, and there are many ways to accomplish each of these steps. That’s why, the anvi’o metagenomic workflow only starts once you have your contigs and BAM files available. One way how to get contigs and BAM files is shown here: https://merenlab.org/tutorials/assembly-based-metagenomics/
 
 ### 1. Quality filtering
 1.1. First, create a TAB-delimited table samples.txt where are our raw R1 and R2 files (see samples.txt file)
