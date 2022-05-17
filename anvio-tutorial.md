@@ -134,3 +134,31 @@ anvi-profile -i 04_MAPPING/Sample_0270.bam -c 05_CONTIG_DATABASE/contigs.db
 anvi-profile -i 04_MAPPING/Sample_1061.bam -c 05_CONTIG_DATABASE/contigs.db 
 ...
 ```
+### 4. Merge anvio profiles
+
+```
+anvi-merge 07_PROFILE_DATABASE/Sample_0099.bam-ANVIO_PROFILE/PROFILE.db 07_PROFILE_DATABASE/Sample_0136.bam-ANVIO_PROFILE/PROFILE.db 07_PROFILE_DATABASE/Sample_0270.bam-ANVIO_PROFILE/PROFILE.db 07_PROFILE_DATABASE/Sample_1061.bam-ANVIO_PROFILE/PROFILE.db 07_PROFILE_DATABASE/Sample_1404.bam-ANVIO_PROFILE/PROFILE.db 07_PROFILE_DATABASE/Sample_1562.bam-ANVIO_PROFILE/PROFILE.db 07_PROFILE_DATABASE/Sample_2183.bam-ANVIO_PROFILE/PROFILE.db 07_PROFILE_DATABASE/Sample_2636.bam-ANVIO_PROFILE/PROFILE.db 
+
+-o 08_SAMPLES_MERGED -c 05_CONTIG_DATABASE/contigs.db
+```
+
+
+### 5. Binning 
+specify driver = concoct, metabat2, maxbin2, dastool, and binsanity.
+
+```
+anvi-cluster-contigs -p 08_SAMPLES_MERGED/PROFILE.db -c 05_CONTIG_DATABASE/contigs.db -C CONCOCT --driver concoct
+```
+
+### 5.1. summarize concoct, binning results
+
+```
+anvi-summarize -p 08_SAMPLES_MERGED/PROFILE.db -c 05_CONTIG_DATABASE/contigs.db -o 09_SAMPLES_SUMMARY -C CONCOCT
+```
+
+### 6. anvi interactive interface to display contig database
+
+```
+anvi-interactive  -p 08_SAMPLES_MERGED/PROFILE.db -c 05_CONTIG_DATABASE/contigs.db -C CONCOCT
+```
+
