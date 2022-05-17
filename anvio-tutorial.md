@@ -109,6 +109,11 @@ anvi-gen-contigs-database -f contigs.fa -o contigs.db -n 'An example contigs dat
 anvi-display-contigs-stats 05_CONTIG_DATABASE/contigs.db
 ```
 
+![1 contig database](https://user-images.githubusercontent.com/39907616/168802436-8a541921-ad63-4371-b95f-d13d048bc48d.png)
+
+
+
+
 ### 2. Import taxonomy for contigs (CENTRIFUGE)
 
 2.1. Export all gene calls:
