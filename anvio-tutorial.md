@@ -165,7 +165,11 @@ anvi-cluster-contigs -p 08_SAMPLES_MERGED/PROFILE.db -c 05_CONTIG_DATABASE/conti
 
 ```
 anvi-summarize -p 08_SAMPLES_MERGED/PROFILE.db -c 05_CONTIG_DATABASE/contigs.db -o 09_SAMPLES_SUMMARY -C CONCOCT
+
+[09_Samples_SUMMARY.zip](https://github.com/trocialba/anvio_metagenomic_workflow/files/8707991/09_Samples_SUMMARY.zip)
 ```
+
+
 
 ### 6. Anvi interactive interface to display contig database
 
