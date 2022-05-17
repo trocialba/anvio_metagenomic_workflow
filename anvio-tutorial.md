@@ -176,4 +176,5 @@ Output of the summarizing command above is shown in the html file inside the zip
 ```
 anvi-interactive  -p 08_SAMPLES_MERGED/PROFILE.db -c 05_CONTIG_DATABASE/contigs.db -C CONCOCT
 ```
+![3 anvio](https://user-images.githubusercontent.com/39907616/168806473-e918b4d0-88c5-4e3d-ab95-e1274e55d7e2.png)
 
