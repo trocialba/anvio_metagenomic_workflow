@@ -64,3 +64,32 @@ mkdir 03_CONTIGS
 Replace $MIN_CONTIG_SIZE and $NUM_THREADS with actual values you want (Ex. 1000 for $MIN_CONTIG_SIZE, and 40 for $NUM_THREADS)
 
 We have our contigs.fa under the directory 03_CONTIGS/.
+
+
+### 3. Mapping
+
+3.1. Create a new directory for mapping results and build an index for our contigs:
+
+```
+mkdir 04_MAPPING
+bowtie2-build 03_CONTIGS/contigs.fa 04_MAPPING/contigs
+```
+
+3.2. Get indexed BAM files for all samples:
+
+```
+for sample in `awk '{print $1}' samples.txt`
+do
+    if [ "$sample" == "sample" ]; then continue; fi
+    
+    R1s=`ls 01_QC/$sample*QUALITY_PASSED_R1* | python -c 'import sys; print(",".join([x.strip() for x in sys.stdin.readlines()]))'`
+    R2s=`ls 01_QC/$sample*QUALITY_PASSED_R2* | python -c 'import sys; print(",".join([x.strip() for x in sys.stdin.readlines()]))'`
+    
+    bowtie2 --threads $NUM_THREADS -x 04_MAPPING/contigs -1 $R1s -2 $R2s --no-unal -S 04_MAPPING/$sample.sam
+    samtools view -F 4 -bS 04_MAPPING/$sample.sam > 04_MAPPING/$sample-RAW.bam
+    anvi-init-bam 04_MAPPING/$sample-RAW.bam -o 04_MAPPING/$sample.bam
+    rm 04_MAPPING/$sample.sam 04_MAPPING/$sample-RAW.bam
+done
+```
+
+
