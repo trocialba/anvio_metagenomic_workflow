@@ -158,7 +158,7 @@ anvi-cluster-contigs -p 08_SAMPLES_MERGED/PROFILE.db -c 05_CONTIG_DATABASE/conti
 anvi-summarize -p 08_SAMPLES_MERGED/PROFILE.db -c 05_CONTIG_DATABASE/contigs.db -o 09_SAMPLES_SUMMARY -C CONCOCT
 ```
 
-### 6. anvi interactive interface to display contig database
+### 6. Anvi interactive interface to display contig database
 
 ```
 anvi-interactive  -p 08_SAMPLES_MERGED/PROFILE.db -c 05_CONTIG_DATABASE/contigs.db -C CONCOCT
