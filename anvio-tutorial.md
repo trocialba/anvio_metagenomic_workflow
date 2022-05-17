@@ -61,4 +61,6 @@ megahit -1 $R1s -2 $R2s --min-contig-len $MIN_CONTIG_SIZE -m 0.85 -o 02_ASSEMBLY
 
 mkdir 03_CONTIGS
 ```
+Replace $MIN_CONTIG_SIZE and $NUM_THREADS with actual values you want (Ex. 1000 for $MIN_CONTIG_SIZE, and 40 for $NUM_THREADS)
 
+We have our contigs.fa under the directory 03_CONTIGS/.
