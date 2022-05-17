@@ -97,12 +97,13 @@ done
 ### 1. Create an anvio contigs database
 An anvi’o contigs database will keep all the information related to your contigs: positions of open reading frames, k-mer frequencies for each contigs, where splits start and end, functional and taxonomic annotation of genes, etc.
 
+1.1. The command below will automatically: compute k-mer frequencies for each contig (the default is 4), soft-split contigs longer than 20,000 bp into smaller ones, identify open reading frames using Prodigal.
+
 ```
 anvi-gen-contigs-database -f contigs.fa -o contigs.db -n 'An example contigs database'
 ```
-this command will automatically: compute k-mer frequencies for each contig (the default is 4), soft-split contigs longer than 20,000 bp into smaller ones, identify open reading frames using Prodigal.
 
-1.1. Display contigs database:
+1.2. Display contigs database:
 
 ```
 anvi-display-contigs-stats 05_CONTIG_DATABASE/contigs.db
@@ -144,13 +145,14 @@ anvi-merge 07_PROFILE_DATABASE/Sample_0099.bam-ANVIO_PROFILE/PROFILE.db 07_PROFI
 
 
 ### 5. Binning 
-specify driver = concoct, metabat2, maxbin2, dastool, and binsanity.
+
+5.1. Binning, specify driver = concoct, metabat2, maxbin2, dastool, and binsanity.
 
 ```
 anvi-cluster-contigs -p 08_SAMPLES_MERGED/PROFILE.db -c 05_CONTIG_DATABASE/contigs.db -C CONCOCT --driver concoct
 ```
 
-### 5.1. summarize concoct, binning results
+5.2. Summarize concoct, binning results
 
 ```
 anvi-summarize -p 08_SAMPLES_MERGED/PROFILE.db -c 05_CONTIG_DATABASE/contigs.db -o 09_SAMPLES_SUMMARY -C CONCOCT
