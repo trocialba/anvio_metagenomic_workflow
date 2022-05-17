@@ -108,3 +108,20 @@ this command will automatically: compute k-mer frequencies for each contig (the 
 anvi-display-contigs-stats 05_CONTIG_DATABASE/contigs.db
 ```
 
+### 2. Import taxonomy for contigs (CENTRIFUGE)
+
+2.1. Export all gene calls:
+
+```
+anvi-get-sequences-for-gene-calls -c 05_CONTIG_DATABASE/contigs.db -o 06_IMPORT_TAXONOMY/gene-calls.fa
+
+centrifuge -f -x $CENTRIFUGE_BASE/p+h+v/p+h+v gene-calls.fa -S centrifuge_hits.tsv
+```
+
+2.2. Import results from centrifuge into anvio:
+
+```
+anvi-import-taxonomy-for-genes -c CONTIGS.db -i centrifuge_report.tsv centrifuge_hits.tsv -p centrifuge
+```
+
+
