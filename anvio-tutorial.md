@@ -17,3 +17,22 @@ mkdir 01_QC
 iu-gen-configs samples.txt -o 01_QC
 ls 01_QC/
 ```
+
+1.3. Quality filtering for each sample:
+
+```
+iu-filter-quality-minoche 01_QC/Sample_01.ini
+```
+
+or for all samples at once:
+
+```
+for ini in 01_QC/*.ini; do iu-filter-quality-minoche $ini; done
+```
+
+
+1.4. QC check output
+
+```
+grep 'total pairs passed' 01_QC/*STATS.txt
+```
