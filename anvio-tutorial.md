@@ -166,7 +166,7 @@ anvi-cluster-contigs -p 08_SAMPLES_MERGED/PROFILE.db -c 05_CONTIG_DATABASE/conti
 ```
 anvi-summarize -p 08_SAMPLES_MERGED/PROFILE.db -c 05_CONTIG_DATABASE/contigs.db -o 09_SAMPLES_SUMMARY -C CONCOCT
 ```
-Output of the summarizing command above is shown in the html file:
+Output of the summarizing command above is shown in the html file inside the zip folder:
 
 [09_Samples_SUMMARY.zip](https://github.com/trocialba/anvio_metagenomic_workflow/files/8707995/09_Samples_SUMMARY.zip)
 
