@@ -173,6 +173,7 @@ Output of the summarizing command above is shown in the html file inside the zip
 
 ### 6. Anvi interactive interface to display contig database
 
+
 ```
 anvi-interactive  -p 08_SAMPLES_MERGED/PROFILE.db -c 05_CONTIG_DATABASE/contigs.db -C CONCOCT
 ```
