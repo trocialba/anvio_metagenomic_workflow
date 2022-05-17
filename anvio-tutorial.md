@@ -124,4 +124,13 @@ centrifuge -f -x $CENTRIFUGE_BASE/p+h+v/p+h+v gene-calls.fa -S centrifuge_hits.t
 anvi-import-taxonomy-for-genes -c CONTIGS.db -i centrifuge_report.tsv centrifuge_hits.tsv -p centrifuge
 ```
 
+### 3. Create a profile database for all samples
+An anvi’o single-profile-db stores sample-specific information about contigs. Profiling a BAM file with anvi’o using anvi-profile creates a single profile that reports properties for each contig in a single sample based on mapping results.
 
+```
+anvi-profile -i 04_MAPPING/Sample_0099.bam -c 05_CONTIG_DATABASE/contigs.db 
+anvi-profile -i 04_MAPPING/Sample_0136.bam -c 05_CONTIG_DATABASE/contigs.db 
+anvi-profile -i 04_MAPPING/Sample_0270.bam -c 05_CONTIG_DATABASE/contigs.db 
+anvi-profile -i 04_MAPPING/Sample_1061.bam -c 05_CONTIG_DATABASE/contigs.db 
+...
+```
