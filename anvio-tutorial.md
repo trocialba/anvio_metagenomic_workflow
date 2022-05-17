@@ -20,6 +20,7 @@ ls 01_QC/
 `ls 01_QC`
 
 ```
-mkdir alba
-mkdir troci
+mkdir 01_QC
+iu-gen-configs samples.txt -o 01_QC
+ls 01_QC/
 ```
