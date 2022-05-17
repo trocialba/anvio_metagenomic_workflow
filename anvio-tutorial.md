@@ -36,3 +36,27 @@ for ini in 01_QC/*.ini; do iu-filter-quality-minoche $ini; done
 ```
 grep 'total pairs passed' 01_QC/*STATS.txt
 ```
+
+## 2. Co-assembly
+
+2.1. Create two environment variables:
+
+```
+R1s=`ls 01_QC/*QUALITY_PASSED_R1* | python -c 'import sys; print(",".join([x.strip() for x in sys.stdin.readlines()]))'`
+
+R2s=`ls 01_QC/*QUALITY_PASSED_R2* | python -c 'import sys; print(",".join([x.strip() for x in sys.stdin.readlines()]))'`
+
+echo $R1s
+
+echo $R2s
+```
+
+
+2.2. Run MEGAHIT:
+
+```
+megahit -1 $R1s -2 $R2s --min-contig-len $MIN_CONTIG_SIZE -m 0.85 -o 02_ASSEMBLY/ -t $NUM_THREADS
+
+mkdir 03_CONTIGS
+```
+
